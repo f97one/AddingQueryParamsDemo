@@ -14,7 +14,7 @@ public class MenuController {
         if (param != null && param.length() > 0) {
             urlParam = param;
         }
-        model.addAttribute("urlparam", urlParam);
+        model.addAttribute("urlParam", urlParam);
         
         return "menu";
     }
