@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+                th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+        
+        <script type="text/javascript" src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+
+        </head>
+    <body>
+        <div>url parameter = <span th:text="${urlParam}">hoge</span></div>
+        <div><button type="button" id="logoutBtn" onclick="return doLogout();">Click to Logout</button></div>
+    </body>
+</html>

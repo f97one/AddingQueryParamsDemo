@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+                th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+        
+        <script type="text/javascript" src="../static/js/main.js" th:src="@{/js/main.js}">
+        </script>
+    </head>
+    <body>
+        <h1>Login</h1>
+        
+        <form th:id="loginForm" method="post" th:action="@{/login}">
+            <input type="text" name="username" placeholder="User name" required="required"
+                   autofocus="autofocus"/>
+
+            <input type="password" name="password" placeholder="Password" required="required"/>
+
+            <button id="sendReqBtn" type="button" onclick="return sendReq();">Sign In</button>
+        </form>
+    </body>
+</html>
