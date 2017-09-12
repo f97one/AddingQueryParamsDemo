@@ -19,6 +19,13 @@ public class AuthSuccess implements AuthenticationSuccessHandler {
         
         // add whole query parameters to url 
         String queryParams = request.getQueryString() == null ? "" : "?" + request.getQueryString();
+        
+        // remove error parameter if present.
+        if (queryParams.contains("error&")) {
+            queryParams.replaceAll("error&", "");
+        } else if (queryParams.contains("&error")) {
+            queryParams.replaceAll("&error", "");
+        }
 
         RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
         redirectStrategy.sendRedirect(request, response, "/menu" + queryParams );
