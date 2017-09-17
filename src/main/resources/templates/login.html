@@ -15,7 +15,7 @@
         <h1>Login</h1>
         
         <form th:id="loginForm" method="post" th:action="@{/login}">
-            <div th:if="${param.error}" style="background-color: #ff3e95;">Invalid User name or Password.</div>
+            <div th:unless="${session == null}" th:text="${session.errReason}" style="background-color: #ff3e95;">Hoge</div>
             
             <input type="text" name="username" placeholder="User name" required="required"
                    autofocus="autofocus"/>
